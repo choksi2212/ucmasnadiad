@@ -8,7 +8,7 @@ import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 const CATEGORIES = ["All", "Classroom", "Competitions", "Events", "Awards"];
 
 const GALLERY_ITEMS = [
-  { src: "/photos/classroom-1.jpg", alt: "UCMAS classroom session at R D Abacuz Nadiad", category: "Classroom" },
+  { src: "/photos/classroom-1.jpg", alt: "UCMAS classroom session at R D Abacus Nadiad", category: "Classroom" },
   { src: "/photos/classroom-2.jpg", alt: "Students learning mental arithmetic", category: "Classroom" },
   { src: "/photos/classroom-3.jpg", alt: "Group learning session", category: "Classroom" },
   { src: "/photos/kids-math-1.jpg", alt: "Children practicing mental math", category: "Classroom" },
@@ -46,7 +46,7 @@ export default function Gallery() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A2E]"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
           >
-            Life at <span className="text-[#E31837]">R D Abacuz</span>
+            Life at <span className="text-[#E31837]">R D Abacus</span>
           </h2>
           <p className="mt-4 text-[#6B7280] max-w-xl mx-auto text-base">
             A glimpse into our classrooms, competitions, and celebrations.

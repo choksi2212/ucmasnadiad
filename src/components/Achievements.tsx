@@ -81,7 +81,7 @@ export default function Achievements() {
             <span className="text-[#FFB800]">Compete & Win</span>
           </h2>
           <p className="mt-4 text-white/70 max-w-xl mx-auto text-base">
-            R D Abacuz Nadiad has produced winners at district, state, and
+            R D Abacus Nadiad has produced winners at district, state, and
             national UCMAS competitions.
           </p>
         </motion.div>

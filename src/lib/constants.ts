@@ -1,17 +1,17 @@
 // ============================================================
-// SITE CONSTANTS — R D Abacuz Nadiad UCMAS Center
+// SITE CONSTANTS — R D Abacus Nadiad UCMAS Center
 // ============================================================
 
 export const SITE = {
-  name: "R D Abacuz Nadiad",
+  name: "R D Abacus Nadiad",
   tagline: "UCMAS Mental Arithmetic Center",
   city: "Nadiad",
   phone: "9375030850",
   phoneDisplay: "+91 93750 30850",
   whatsapp: "919375030850",
-  whatsappMessage: "Hi! I'm interested in UCMAS classes for my child at R D Abacuz Nadiad.",
+  whatsappMessage: "Hi! I'm interested in UCMAS classes for my child at R D Abacus Nadiad.",
   email: "rdabacuznadiad@gmail.com",
-  address: "R D Abacuz — UCMAS Center, Nadiad, Gujarat, India",
+  address: "R D Abacus — UCMAS Center, Nadiad, Gujarat, India",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14714.82!2d72.8617!3d22.6916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e0000000001%3A0x1!2sNadiad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000",
   operatingHours: [
@@ -190,7 +190,7 @@ export const TESTIMONIALS = [
     childName: "Sia",
     childAge: 7,
     quote:
-      "Sia used to be scared of numbers. Now she loves math and proudly shows off her mental calculations to everyone. The staff at R D Abacuz are warm, patient, and professional.",
+      "Sia used to be scared of numbers. Now she loves math and proudly shows off her mental calculations to everyone. The staff at R D Abacus are warm, patient, and professional.",
     location: "Kheda",
   },
   {

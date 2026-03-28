@@ -114,7 +114,7 @@ export default function Footer() {
             ) : (
               <form onSubmit={onSubmit} className="space-y-4" noValidate>
                 {/* Honeypot */}
-                <input type="hidden" name="from_name" value="R D Abacuz Nadiad Website" />
+                <input type="hidden" name="from_name" value="R D Abacus Nadiad Website" />
                 <input
                   type="text"
                   name="botcheck"
@@ -264,7 +264,7 @@ export default function Footer() {
                 className="text-xl font-bold text-white"
                 style={{ fontFamily: "Space Grotesk, sans-serif" }}
               >
-                R D Abacuz Nadiad
+                R D Abacus Nadiad
               </h3>
               <p className="text-white/60 text-sm mt-1">
                 UCMAS Mental Arithmetic Center, Nadiad, Gujarat
@@ -327,7 +327,7 @@ export default function Footer() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
-                title="R D Abacuz Nadiad location on Google Maps"
+                title="R D Abacus Nadiad location on Google Maps"
               />
             </div>
 
@@ -379,7 +379,7 @@ export default function Footer() {
       <div className="border-t border-white/10 py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">
           <span>
-            © {new Date().getFullYear()} R D Abacuz Nadiad. All rights reserved.
+            © {new Date().getFullYear()} R D Abacus Nadiad. All rights reserved.
           </span>
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">

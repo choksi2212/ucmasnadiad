@@ -28,7 +28,7 @@ export default function Testimonials() {
             What Parents <span className="text-[#E31837]">Say</span>
           </h2>
           <p className="mt-4 text-[#6B7280] max-w-xl mx-auto text-base">
-            Real words from real parents whose children study at R D Abacuz Nadiad.
+            Real words from real parents whose children study at R D Abacus Nadiad.
           </p>
         </motion.div>
       </div>

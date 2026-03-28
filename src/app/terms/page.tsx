@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — R D Abacuz Nadiad",
-  description: "Terms of Use for the R D Abacuz Nadiad website.",
+  title: "Terms of Use — R D Abacus Nadiad",
+  description: "Terms of Use for the R D Abacus Nadiad website.",
   robots: { index: false, follow: false },
 };
 
@@ -33,7 +33,7 @@ export default function TermsOfUse() {
           {[
             {
               title: "1. Website Purpose",
-              content: `This Website is an informational and marketing resource for R D Abacuz Nadiad, a UCMAS franchise center located in Nadiad, Gujarat, India. It provides information about our programs, instructors, achievements, and contact details. It is not a platform for online enrollment, payment processing, or student data management.`,
+              content: `This Website is an informational and marketing resource for R D Abacus Nadiad, a UCMAS franchise center located in Nadiad, Gujarat, India. It provides information about our programs, instructors, achievements, and contact details. It is not a platform for online enrollment, payment processing, or student data management.`,
             },
             {
               title: "2. Accuracy of Information",
@@ -41,7 +41,7 @@ export default function TermsOfUse() {
             },
             {
               title: "3. Intellectual Property",
-              content: `All content on this Website — including text, images, logos, graphics, and layout — is the property of R D Abacuz Nadiad or its licensors. The UCMAS name, logo, and associated branding are trademarks of UCMAS International. You may not reproduce, distribute, modify, or use any content from this Website for commercial purposes without prior written permission.`,
+              content: `All content on this Website — including text, images, logos, graphics, and layout — is the property of R D Abacus Nadiad or its licensors. The UCMAS name, logo, and associated branding are trademarks of UCMAS International. You may not reproduce, distribute, modify, or use any content from this Website for commercial purposes without prior written permission.`,
             },
             {
               title: "4. Contact Form & Enquiries",
@@ -53,11 +53,11 @@ export default function TermsOfUse() {
             },
             {
               title: "6. Third-Party Links",
-              content: `This Website contains links to external websites (Google Maps, WhatsApp, UCMAS official site, social media). These links are provided for convenience. R D Abacuz Nadiad is not responsible for the content, privacy practices, or availability of any external sites.`,
+              content: `This Website contains links to external websites (Google Maps, WhatsApp, UCMAS official site, social media). These links are provided for convenience. R D Abacus Nadiad is not responsible for the content, privacy practices, or availability of any external sites.`,
             },
             {
               title: "7. Limitation of Liability",
-              content: `R D Abacuz Nadiad shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this Website or reliance on any information contained herein. The Website is provided "as is" without any warranty of any kind.`,
+              content: `R D Abacus Nadiad shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this Website or reliance on any information contained herein. The Website is provided "as is" without any warranty of any kind.`,
             },
             {
               title: "8. Prohibited Use",
@@ -87,7 +87,7 @@ export default function TermsOfUse() {
                 <p className="text-[#6B7280] text-sm leading-relaxed">{section.content}</p>
               ) : (
                 <div className="mt-3 p-4 bg-[#FAFAFA] rounded-xl text-sm text-[#1A1A2E]">
-                  <p><strong>R D Abacuz Nadiad</strong></p>
+                  <p><strong>R D Abacus Nadiad</strong></p>
                   <p>Nadiad, Gujarat, India — 387001</p>
                   <p className="mt-1">
                     📞 <a href="tel:9375030850" className="text-[#E31837]">+91 93750 30850</a>

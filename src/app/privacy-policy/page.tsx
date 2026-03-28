@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — R D Abacuz Nadiad",
-  description: "Privacy Policy for R D Abacuz Nadiad UCMAS center website.",
+  title: "Privacy Policy — R D Abacus Nadiad",
+  description: "Privacy Policy for R D Abacus Nadiad UCMAS center website.",
   robots: { index: false, follow: false },
 };
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-12 prose prose-sm sm:prose-base max-w-none">
           
           <p className="text-[#6B7280]">
-            This Privacy Policy describes how <strong>R D Abacuz Nadiad</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects information you provide when you use our website at{" "}
+            This Privacy Policy describes how <strong>R D Abacus Nadiad</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects information you provide when you use our website at{" "}
             <strong>rdabacuznadiad.com</strong> (the &ldquo;Website&rdquo;).
           </p>
 
@@ -136,7 +136,7 @@ export default function PrivacyPolicy() {
             If you have any questions or concerns about this Privacy Policy, please contact:
           </p>
           <div className="mt-3 p-4 bg-[#FAFAFA] rounded-xl text-sm text-[#1A1A2E]">
-            <p><strong>R D Abacuz Nadiad</strong></p>
+            <p><strong>R D Abacus Nadiad</strong></p>
             <p>Nadiad, Gujarat, India — 387001</p>
             <p className="mt-1">
               📞 <a href="tel:9375030850" className="text-[#E31837]">+91 93750 30850</a>

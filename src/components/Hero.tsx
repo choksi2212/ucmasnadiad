@@ -24,14 +24,14 @@ export default function Hero() {
           priority
           className="object-cover"
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1B3A6B]/90 via-[#1B3A6B]/70 to-[#1B3A6B]/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        {/* Elegant deep gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19]/95 via-[#0B0F19]/70 to-[#0B0F19]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#E31837]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-[#FFB800]/10 rounded-full blur-2xl" />
+      {/* Subtle abstract blurs instead of garish circles */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C8102E]/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[120px]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 pb-16">
@@ -43,20 +43,19 @@ export default function Hero() {
         >
           {/* Badge */}
           <motion.div variants={fadeUp} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-sm font-medium">
-              <span className="w-2 h-2 bg-[#FFB800] rounded-full animate-pulse" />
-              World&apos;s #1 Mental Arithmetic Program
+            <span className="inline-flex items-center gap-2 px-5 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-white/90 text-xs tracking-[0.15em] uppercase font-medium shadow-2xl">
+              <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse" />
+              World's #1 Mental Arithmetic Program
             </span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.05] mb-6 font-heading"
           >
-            Unlock Your Child&apos;s{" "}
-            <span className="text-[#FFB800]">Hidden Potential</span>
+            Unlock Your Child's{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FDE047]">Hidden Potential</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -68,19 +67,19 @@ export default function Hero() {
             for children aged 4–13 that builds speed, memory, and confidence.
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-10">
+          {/* Premium CTA Buttons */}
+          <motion.div variants={fadeUp} className="flex flex-wrap gap-5 mb-12">
             <button
               onClick={() => scrollTo("contact")}
-              className="px-7 py-3.5 bg-[#E31837] text-white font-semibold rounded-full hover:bg-[#b8102b] transition-all duration-200 shadow-xl shadow-red-500/30 hover:shadow-red-500/50 hover:-translate-y-0.5 text-base"
+              className="px-8 py-4 bg-[#C8102E] text-white text-sm tracking-wide uppercase font-semibold rounded-full hover:bg-[#9B0C23] transition-all duration-300 shadow-[0_4px_14px_0_rgba(200,16,46,0.25)] hover:shadow-[0_6px_20px_rgba(200,16,46,0.4)] hover:-translate-y-0.5"
             >
-              Book a Free Demo Class
+              Book a Free Demo
             </button>
             <button
               onClick={() => scrollTo("about")}
-              className="px-7 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border border-white/30 hover:bg-white/20 transition-all duration-200 text-base"
+              className="px-8 py-4 bg-transparent text-white text-sm tracking-wide uppercase font-semibold rounded-full border border-white/20 hover:bg-white/5 transition-all duration-300"
             >
-              See How It Works →
+              See How It Works
             </button>
           </motion.div>
 
@@ -97,9 +96,9 @@ export default function Hero() {
             ].map((badge) => (
               <span
                 key={badge}
-                className="flex items-center gap-1.5 text-white/70 text-sm"
+                className="flex items-center gap-2 text-white/60 text-xs tracking-wider uppercase font-medium"
               >
-                <span className="w-1 h-1 bg-[#FFB800] rounded-full" />
+                <span className="w-1.5 h-1.5 bg-[#D4AF37]/70 rounded-full" />
                 {badge}
               </span>
             ))}

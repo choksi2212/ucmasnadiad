@@ -95,7 +95,7 @@ export default function WhatIsUCMAS() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
                 src="/photos/kids-math-1.jpg"
-                alt="Children learning UCMAS mental arithmetic at R D Abacuz Nadiad"
+                alt="Children learning UCMAS mental arithmetic at R D Abacus Nadiad"
                 fill
                 className="object-cover"
               />

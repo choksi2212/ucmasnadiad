@@ -50,7 +50,7 @@ export default function Teachers() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={teacher.photo}
-                  alt={`${teacher.name} — UCMAS instructor at R D Abacuz Nadiad`}
+                  alt={`${teacher.name} — UCMAS instructor at R D Abacus Nadiad`}
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
@@ -106,7 +106,7 @@ export default function Teachers() {
             Founded by Sharad Patel · Established {SITE.founded}
           </p>
           <p className="text-white/80 text-sm max-w-2xl mx-auto">
-            R D Abacuz Nadiad has been developing young minds through the UCMAS
+            R D Abacus Nadiad has been developing young minds through the UCMAS
             program for over {new Date().getFullYear() - SITE.founded} years. Our team of certified
             instructors bring passion, patience, and proven methodology to every
             class.

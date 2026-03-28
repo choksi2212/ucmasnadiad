@@ -49,18 +49,18 @@ export default function Navbar() {
         <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group">
-            <div className="relative w-[100px] h-[40px]">
+            <div className="relative w-[110px] h-[44px]">
               <Image
                 src="/ucmas-logo.png"
                 alt="UCMAS Logo"
                 fill
-                className="object-contain"
+                className="object-contain drop-shadow-sm"
                 priority
               />
             </div>
-            <div className="hidden sm:block transition-colors duration-300">
-              <div className={`text-sm font-bold leading-tight ${isScrolled ? "text-[#1B3A6B]" : "text-white"}`}>R D Abacuz</div>
-              <div className={`text-xs leading-tight ${isScrolled ? "text-[#6B7280]" : "text-white/80"}`}>Nadiad</div>
+            <div className="hidden sm:flex flex-col justify-center border-l border-white/20 pl-4 h-9 transition-colors duration-300">
+              <div className={`text-[15px] font-heading font-semibold tracking-tight leading-none ${isScrolled ? "text-[#0B0F19]" : "text-white"}`}>R D Abacus</div>
+              <div className={`text-[10px] uppercase tracking-[0.2em] font-medium mt-1 ${isScrolled ? "text-[#64748B]" : "text-[#D4AF37]"}`}>Nadiad Center</div>
             </div>
           </button>
 
