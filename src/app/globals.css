@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --color-primary: #E31837;
   --color-primary-dark: #b8102b;
   --color-secondary: #1B3A6B;
@@ -15,11 +15,7 @@
   --color-error: #EF4444;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 html {
   scroll-behavior: smooth;

@@ -10,8 +10,16 @@ import { NAV_LINKS, SITE } from "@/lib/constants";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
-  const bgOpacity = useTransform(scrollY, [0, 80], [0, 1]);
-  const shadowOpacity = useTransform(scrollY, [0, 80], [0, 1]);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    return scrollY.on("change", (latest) => {
+      setIsScrolled(latest > 10);
+    });
+  }, [scrollY]);
+
+  const bgOpacity = useTransform(scrollY, [0, 40], [0, 1]);
+  const shadowOpacity = useTransform(scrollY, [0, 40], [0, 1]);
 
   // Close mobile menu on resize
   useEffect(() => {
@@ -50,9 +58,9 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="hidden sm:block">
-              <div className="text-sm font-bold text-[#1B3A6B] leading-tight">R D Abacuz</div>
-              <div className="text-xs text-[#6B7280] leading-tight">Nadiad</div>
+            <div className="hidden sm:block transition-colors duration-300">
+              <div className={`text-sm font-bold leading-tight ${isScrolled ? "text-[#1B3A6B]" : "text-white"}`}>R D Abacuz</div>
+              <div className={`text-xs leading-tight ${isScrolled ? "text-[#6B7280]" : "text-white/80"}`}>Nadiad</div>
             </div>
           </button>
 
@@ -62,7 +70,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="relative px-4 py-2 text-sm font-medium text-[#1A1A2E] hover:text-[#E31837] transition-colors duration-200 group"
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${isScrolled ? "text-[#1A1A2E] hover:text-[#E31837]" : "text-white/90 hover:text-white"}`}
               >
                 {link.label}
                 <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-[#E31837] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded-full" />
@@ -74,7 +82,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-1.5 text-sm text-[#1B3A6B] font-medium hover:text-[#E31837] transition-colors"
+              className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${isScrolled ? "text-[#1B3A6B] hover:text-[#E31837]" : "text-white hover:text-white/80"}`}
             >
               <Phone size={14} />
               {SITE.phoneDisplay}
@@ -89,12 +97,12 @@ export default function Navbar() {
 
           {/* Mobile: phone icon + hamburger */}
           <div className="flex lg:hidden items-center gap-3">
-            <a href={`tel:${SITE.phone}`} className="p-2 text-[#1B3A6B]">
+            <a href={`tel:${SITE.phone}`} className={`p-2 transition-colors ${isScrolled ? "text-[#1B3A6B]" : "text-white"}`}>
               <Phone size={18} />
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 text-[#1A1A2E]"
+              className={`p-2 transition-colors ${isScrolled ? "text-[#1A1A2E]" : "text-white"}`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
