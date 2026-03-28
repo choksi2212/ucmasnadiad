@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #E31837;
+  --color-primary-dark: #b8102b;
+  --color-secondary: #1B3A6B;
+  --color-secondary-dark: #122852;
+  --color-accent: #FFB800;
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A2E;
+  --color-text-muted: #6B7280;
+  --color-border: #E5E7EB;
+  --color-success: #22C55E;
+  --color-error: #EF4444;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFAFA;
+  color: #1A1A2E;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+::-webkit-scrollbar-thumb {
+  background: #E31837;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8102b;
+}
+
+/* Smooth scroll offset for sticky nav */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* WhatsApp pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+/* Counter gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #E31837 0%, #1B3A6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Section gradient backgrounds */
+.section-blue {
+  background: linear-gradient(135deg, #1B3A6B 0%, #122852 100%);
+}
+
+/* Carousel auto scroll */
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.auto-scroll {
+  animation: scroll-x 30s linear infinite;
+}
+.auto-scroll:hover {
+  animation-play-state: paused;
 }
