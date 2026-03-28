@@ -70,10 +70,10 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${isScrolled ? "text-[#1A1A2E] hover:text-[#E31837]" : "text-white/90 hover:text-white"}`}
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${isScrolled ? "text-[#0B0F19] hover:text-[#C8102E]" : "text-white/90 hover:text-white"}`}
               >
                 {link.label}
-                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-[#E31837] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded-full" />
+                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-[#C8102E] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded-full" />
               </button>
             ))}
           </div>
@@ -82,14 +82,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${SITE.phone}`}
-              className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${isScrolled ? "text-[#1B3A6B] hover:text-[#E31837]" : "text-white hover:text-white/80"}`}
+              className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${isScrolled ? "text-[#0B0F19] hover:text-[#C8102E]" : "text-white hover:text-white/80"}`}
             >
               <Phone size={14} />
               {SITE.phoneDisplay}
             </a>
             <button
               onClick={() => scrollTo("#contact")}
-              className="px-5 py-2.5 bg-[#E31837] text-white text-sm font-semibold rounded-full hover:bg-[#b8102b] transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5"
+              className="px-5 py-2.5 bg-[#C8102E] text-white text-sm font-semibold rounded-full hover:bg-[#9B0C23] transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5"
             >
               Book Free Demo
             </button>
@@ -97,12 +97,12 @@ export default function Navbar() {
 
           {/* Mobile: phone icon + hamburger */}
           <div className="flex lg:hidden items-center gap-3">
-            <a href={`tel:${SITE.phone}`} className={`p-2 transition-colors ${isScrolled ? "text-[#1B3A6B]" : "text-white"}`}>
+            <a href={`tel:${SITE.phone}`} className={`p-2 transition-colors ${isScrolled ? "text-[#0B0F19]" : "text-white"}`}>
               <Phone size={18} />
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`p-2 transition-colors ${isScrolled ? "text-[#1A1A2E]" : "text-white"}`}
+              className={`p-2 transition-colors ${isScrolled ? "text-[#0B0F19]" : "text-white"}`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -132,7 +132,7 @@ export default function Navbar() {
               className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white shadow-2xl flex flex-col"
             >
               <div className="flex items-center justify-between px-5 h-[72px] border-b border-gray-100">
-                <span className="font-bold text-[#1B3A6B]">Menu</span>
+                <span className="font-bold text-[#0B0F19]">Menu</span>
                 <button onClick={() => setMobileOpen(false)}>
                   <X size={20} />
                 </button>
@@ -142,7 +142,7 @@ export default function Navbar() {
                   <button
                     key={link.href}
                     onClick={() => scrollTo(link.href)}
-                    className="w-full text-left px-4 py-3 text-base font-medium text-[#1A1A2E] hover:text-[#E31837] hover:bg-red-50 rounded-xl transition-colors"
+                    className="w-full text-left px-4 py-3 text-base font-medium text-[#0B0F19] hover:text-[#C8102E] hover:bg-red-50 rounded-xl transition-colors"
                   >
                     {link.label}
                   </button>
@@ -151,14 +151,14 @@ export default function Navbar() {
               <div className="px-4 pb-6 flex flex-col gap-3">
                 <a
                   href={`tel:${SITE.phone}`}
-                  className="flex items-center justify-center gap-2 w-full py-3 border-2 border-[#1B3A6B] text-[#1B3A6B] font-semibold rounded-full hover:bg-[#1B3A6B] hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-3 border-2 border-[#0B0F19] text-[#0B0F19] font-semibold rounded-full hover:bg-[#0B0F19] hover:text-white transition-colors"
                 >
                   <Phone size={16} />
                   {SITE.phoneDisplay}
                 </a>
                 <button
                   onClick={() => scrollTo("#contact")}
-                  className="w-full py-3 bg-[#E31837] text-white font-semibold rounded-full shadow-lg shadow-red-500/25"
+                  className="w-full py-3 bg-[#C8102E] text-white font-semibold rounded-full shadow-lg shadow-red-500/25"
                 >
                   Book Free Demo →
                 </button>

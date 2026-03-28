@@ -19,16 +19,15 @@ export default function Programs() {
           viewport={viewportOnce}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#1B3A6B] text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#0B0F19] text-sm font-semibold rounded-full mb-4">
             Programs
           </span>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A2E]"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className=" font-heading"
           >
-            Programs &amp; <span className="text-[#1B3A6B]">Age Groups</span>
+            Programs &amp; <span className="text-[#0B0F19]">Age Groups</span>
           </h2>
-          <p className="mt-4 text-[#6B7280] max-w-xl mx-auto text-base">
+          <p className="mt-4 text-[#64748B] max-w-xl mx-auto text-base">
             Structured programs designed for every stage of a child&apos;s development.
           </p>
         </motion.div>
@@ -42,7 +41,7 @@ export default function Programs() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                 active === i
                   ? "text-white shadow-lg"
-                  : "bg-white text-[#6B7280] border border-gray-200 hover:border-gray-300"
+                  : "bg-white text-[#64748B] border border-gray-200 hover:border-gray-300"
               }`}
               style={active === i ? { backgroundColor: p.color } : {}}
             >
@@ -70,12 +69,11 @@ export default function Programs() {
                   style={{ backgroundColor: program.color }}
                 />
                 <h3
-                  className="text-2xl sm:text-3xl font-bold text-[#1A1A2E] mb-2"
-                  style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                  className=" font-heading"
                 >
                   {program.label}
                 </h3>
-                <p className="text-[#6B7280] text-sm mb-8 leading-relaxed">
+                <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
                   {program.description}
                 </p>
 
@@ -90,10 +88,10 @@ export default function Programs() {
                       key={item.label}
                       className="bg-[#FAFAFA] rounded-2xl p-4 text-center"
                     >
-                      <div className="text-sm font-bold text-[#1A1A2E]">
+                      <div className="text-sm font-bold text-[#0B0F19]">
                         {item.value}
                       </div>
-                      <div className="text-xs text-[#6B7280] mt-1">
+                      <div className="text-xs text-[#64748B] mt-1">
                         {item.label}
                       </div>
                     </div>
@@ -118,7 +116,7 @@ export default function Programs() {
                 className="p-8 sm:p-10 flex flex-col justify-center"
                 style={{ backgroundColor: program.color + "08" }}
               >
-                <h4 className="text-sm font-bold text-[#6B7280] uppercase tracking-wider mb-6">
+                <h4 className="text-sm font-bold text-[#64748B] uppercase tracking-wider mb-6">
                   What Your Child Will Learn
                 </h4>
                 <div className="space-y-4">
@@ -136,7 +134,7 @@ export default function Programs() {
                       >
                         <Check size={13} className="text-white" />
                       </div>
-                      <span className="text-[#1A1A2E] text-sm font-medium">
+                      <span className="text-[#0B0F19] text-sm font-medium">
                         {h}
                       </span>
                     </motion.div>

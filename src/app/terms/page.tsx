@@ -11,11 +11,10 @@ export default function TermsOfUse() {
   const updated = "28 March 2026";
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
-      <div className="bg-[#1B3A6B] py-16">
+      <div className="bg-[#0B0F19] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1
-            className="text-3xl sm:text-4xl font-bold text-white"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className=" font-heading"
           >
             Terms of Use
           </h1>
@@ -26,7 +25,7 @@ export default function TermsOfUse() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-12">
           
-          <p className="text-[#6B7280] text-sm leading-relaxed">
+          <p className="text-[#64748B] text-sm leading-relaxed">
             By accessing and using the website located at <strong>rdabacuznadiad.com</strong> (the &ldquo;Website&rdquo;), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this Website.
           </p>
 
@@ -78,22 +77,21 @@ export default function TermsOfUse() {
           ].map((section) => (
             <div key={section.title} className="mt-8">
               <h2
-                className="text-[#1A1A2E] font-bold text-xl mb-3"
-                style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                className=" font-heading"
               >
                 {section.title}
               </h2>
               {section.content ? (
-                <p className="text-[#6B7280] text-sm leading-relaxed">{section.content}</p>
+                <p className="text-[#64748B] text-sm leading-relaxed">{section.content}</p>
               ) : (
-                <div className="mt-3 p-4 bg-[#FAFAFA] rounded-xl text-sm text-[#1A1A2E]">
+                <div className="mt-3 p-4 bg-[#FAFAFA] rounded-xl text-sm text-[#0B0F19]">
                   <p><strong>R D Abacus Nadiad</strong></p>
                   <p>Nadiad, Gujarat, India — 387001</p>
                   <p className="mt-1">
-                    📞 <a href="tel:9375030850" className="text-[#E31837]">+91 93750 30850</a>
+                    📞 <a href="tel:9375030850" className="text-[#C8102E]">+91 93750 30850</a>
                   </p>
                   <p>
-                    ✉️ <a href="mailto:rdabacuznadiad@gmail.com" className="text-[#E31837]">rdabacuznadiad@gmail.com</a>
+                    ✉️ <a href="mailto:rdabacuznadiad@gmail.com" className="text-[#C8102E]">rdabacuznadiad@gmail.com</a>
                   </p>
                 </div>
               )}
@@ -104,7 +102,7 @@ export default function TermsOfUse() {
         <div className="mt-8 text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#E31837] text-white font-semibold rounded-full hover:bg-[#b8102b] transition-colors shadow-lg shadow-red-500/25"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#C8102E] text-white font-semibold rounded-full hover:bg-[#9B0C23] transition-colors shadow-lg shadow-red-500/25"
           >
             ← Back to Home
           </Link>

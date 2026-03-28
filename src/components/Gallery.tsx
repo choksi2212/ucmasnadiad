@@ -39,16 +39,15 @@ export default function Gallery() {
           viewport={viewportOnce}
           className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-1.5 bg-red-50 text-[#E31837] text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-red-50 text-[#C8102E] text-sm font-semibold rounded-full mb-4">
             Gallery
           </span>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A2E]"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className=" font-heading"
           >
-            Life at <span className="text-[#E31837]">R D Abacus</span>
+            Life at <span className="text-[#C8102E]">R D Abacus</span>
           </h2>
-          <p className="mt-4 text-[#6B7280] max-w-xl mx-auto text-base">
+          <p className="mt-4 text-[#64748B] max-w-xl mx-auto text-base">
             A glimpse into our classrooms, competitions, and celebrations.
           </p>
         </motion.div>
@@ -61,8 +60,8 @@ export default function Gallery() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-[#E31837] text-white shadow-lg shadow-red-500/25"
-                  : "bg-white text-[#6B7280] border border-gray-200 hover:border-gray-300"
+                  ? "bg-[#C8102E] text-white shadow-lg shadow-red-500/25"
+                  : "bg-white text-[#64748B] border border-gray-200 hover:border-gray-300"
               }`}
             >
               {cat}

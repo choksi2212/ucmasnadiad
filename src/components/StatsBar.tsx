@@ -46,7 +46,7 @@ function AnimatedCounter({
 
 export default function StatsBar() {
   return (
-    <section className="bg-[#1B3A6B] py-12 sm:py-16">
+    <section className="bg-[#0B0F19] py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
           {STATS.map((stat, i) => (
@@ -65,7 +65,7 @@ export default function StatsBar() {
                   suffix={stat.suffix}
                   compact={stat.compact}
                 />
-                <span className="text-[#FFB800]">{stat.suffix}</span>
+                <span className="text-[#D4AF37]">{stat.suffix}</span>
               </div>
               <div className="text-white/60 text-sm font-medium">{stat.label}</div>
             </motion.div>

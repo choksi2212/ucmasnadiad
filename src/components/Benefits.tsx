@@ -23,12 +23,12 @@ const ICONS: Record<string, React.ComponentType<any>> = {
 };
 
 const CARD_COLORS = [
-  { bg: "#FFF5F5", icon: "#E31837", border: "#FECACA" },
-  { bg: "#EFF6FF", icon: "#1B3A6B", border: "#BFDBFE" },
-  { bg: "#FFFBEB", icon: "#FFB800", border: "#FDE68A" },
+  { bg: "#FFF5F5", icon: "#C8102E", border: "#FECACA" },
+  { bg: "#EFF6FF", icon: "#0B0F19", border: "#BFDBFE" },
+  { bg: "#FFFBEB", icon: "#D4AF37", border: "#FDE68A" },
   { bg: "#F0FDF4", icon: "#22C55E", border: "#BBF7D0" },
   { bg: "#FAF5FF", icon: "#9333EA", border: "#E9D5FF" },
-  { bg: "#EFF6FF", icon: "#1B3A6B", border: "#BFDBFE" },
+  { bg: "#EFF6FF", icon: "#0B0F19", border: "#BFDBFE" },
 ];
 
 export default function Benefits() {
@@ -41,17 +41,16 @@ export default function Benefits() {
           viewport={viewportOnce}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-red-50 text-[#E31837] text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-red-50 text-[#C8102E] text-sm font-semibold rounded-full mb-4">
             Why UCMAS?
           </span>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A2E]"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className=" font-heading"
           >
             6 Skills Your Child Will{" "}
-            <span className="text-[#E31837]">Master</span>
+            <span className="text-[#C8102E]">Master</span>
           </h2>
-          <p className="mt-4 text-[#6B7280] max-w-xl mx-auto text-base">
+          <p className="mt-4 text-[#64748B] max-w-xl mx-auto text-base">
             UCMAS doesn&apos;t just teach math. It rewires the brain for lifelong
             excellence.
           </p>
@@ -93,12 +92,11 @@ export default function Benefits() {
 
                 {/* Content */}
                 <h3
-                  className="text-lg font-bold text-[#1A1A2E] mb-2"
-                  style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                  className=" font-heading"
                 >
                   {benefit.title}
                 </h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">
+                <p className="text-[#64748B] text-sm leading-relaxed">
                   {benefit.description}
                 </p>
               </motion.div>

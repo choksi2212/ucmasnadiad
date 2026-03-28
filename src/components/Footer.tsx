@@ -64,7 +64,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="bg-[#1A1A2E]">
+    <footer id="contact" className="bg-[#0B0F19]">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -79,11 +79,10 @@ export default function Footer() {
               Get in Touch
             </span>
             <h2
-              className="text-3xl sm:text-4xl font-bold text-white mb-3"
-              style={{ fontFamily: "Space Grotesk, sans-serif" }}
+              className=" font-heading"
             >
               Book a{" "}
-              <span className="text-[#FFB800]">Free Demo Class</span>
+              <span className="text-[#D4AF37]">Free Demo Class</span>
             </h2>
             <p className="text-white/60 text-sm mb-8 leading-relaxed">
               Fill in your details and we&apos;ll call you within 24 hours to
@@ -98,7 +97,7 @@ export default function Footer() {
               >
                 <CheckCircle size={48} className="text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">
-                  Thank You! 🎉
+                  Thank You
                 </h3>
                 <p className="text-white/70 text-sm">
                   We&apos;ve received your enquiry. Sharad Patel will call you
@@ -224,7 +223,7 @@ export default function Footer() {
                 <button
                   type="submit"
                   disabled={formState === "loading"}
-                  className="w-full flex items-center justify-center gap-2 py-4 bg-[#E31837] hover:bg-[#b8102b] disabled:opacity-70 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5 disabled:translate-y-0"
+                  className="w-full flex items-center justify-center gap-2 py-4 bg-[#C8102E] hover:bg-[#9B0C23] disabled:opacity-70 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5 disabled:translate-y-0"
                 >
                   {formState === "loading" ? (
                     <>
@@ -252,17 +251,16 @@ export default function Footer() {
           >
             {/* Logo + tagline */}
             <div>
-              <div className="relative w-[120px] h-[48px] mb-3">
+              <div className="relative w-[130px] h-[48px] bg-white rounded-md px-2 py-1 mb-4 shadow-lg border border-white/10">
                 <Image
                   src="/ucmas-logo.png"
                   alt="UCMAS Logo"
                   fill
-                  className="object-contain brightness-0 invert"
+                  className="object-contain p-1"
                 />
               </div>
               <h3
-                className="text-xl font-bold text-white"
-                style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                className=" font-heading"
               >
                 R D Abacus Nadiad
               </h3>
@@ -277,8 +275,8 @@ export default function Footer() {
                 href={`tel:${SITE.phone}`}
                 className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm group"
               >
-                <div className="w-9 h-9 bg-white/8 rounded-xl flex items-center justify-center group-hover:bg-[#E31837]/20 transition-colors flex-shrink-0">
-                  <Phone size={15} className="text-[#E31837]" />
+                <div className="w-9 h-9 bg-white/8 rounded-xl flex items-center justify-center group-hover:bg-[#C8102E]/20 transition-colors flex-shrink-0">
+                  <Phone size={15} className="text-[#C8102E]" />
                 </div>
                 {SITE.phoneDisplay}
               </a>
@@ -286,14 +284,14 @@ export default function Footer() {
                 href={`mailto:${SITE.email}`}
                 className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm group"
               >
-                <div className="w-9 h-9 bg-white/8 rounded-xl flex items-center justify-center group-hover:bg-[#E31837]/20 transition-colors flex-shrink-0">
-                  <Mail size={15} className="text-[#E31837]" />
+                <div className="w-9 h-9 bg-white/8 rounded-xl flex items-center justify-center group-hover:bg-[#C8102E]/20 transition-colors flex-shrink-0">
+                  <Mail size={15} className="text-[#C8102E]" />
                 </div>
                 {SITE.email}
               </a>
               <div className="flex items-start gap-3 text-white/70 text-sm">
                 <div className="w-9 h-9 bg-white/8 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <MapPin size={15} className="text-[#E31837]" />
+                  <MapPin size={15} className="text-[#C8102E]" />
                 </div>
                 {SITE.address}
               </div>
@@ -337,7 +335,7 @@ export default function Footer() {
                 href={SITE.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/8 hover:bg-[#E31837]/20 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
+                className="w-9 h-9 bg-white/8 hover:bg-[#C8102E]/20 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -350,7 +348,7 @@ export default function Footer() {
                 href={SITE.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/8 hover:bg-[#1B3A6B]/40 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
+                className="w-9 h-9 bg-white/8 hover:bg-[#0B0F19]/40 rounded-xl flex items-center justify-center text-white/60 hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

@@ -40,14 +40,14 @@ function StatCard({
       variants={fadeUp}
       className="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
     >
-      <div className="w-14 h-14 bg-gradient-to-br from-[#E31837]/10 to-[#1B3A6B]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-        <Icon size={24} className="text-[#E31837]" />
+      <div className="w-14 h-14 bg-gradient-to-br from-[#C8102E]/10 to-[#0B0F19]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <Icon size={24} className="text-[#C8102E]" />
       </div>
-      <div className="text-4xl font-bold text-[#1A1A2E] mb-1">
+      <div className="text-4xl font-bold text-[#0B0F19] mb-1">
         {display}
-        <span className="text-[#E31837]">{achievement.suffix}</span>
+        <span className="text-[#C8102E]">{achievement.suffix}</span>
       </div>
-      <div className="text-sm text-[#6B7280] font-medium">{achievement.label}</div>
+      <div className="text-sm text-[#64748B] font-medium">{achievement.label}</div>
     </motion.div>
   );
 }
@@ -74,11 +74,10 @@ export default function Achievements() {
             Results & Achievements
           </span>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className=" font-heading"
           >
             Our Students{" "}
-            <span className="text-[#FFB800]">Compete & Win</span>
+            <span className="text-[#D4AF37]">Compete & Win</span>
           </h2>
           <p className="mt-4 text-white/70 max-w-xl mx-auto text-base">
             R D Abacus Nadiad has produced winners at district, state, and
