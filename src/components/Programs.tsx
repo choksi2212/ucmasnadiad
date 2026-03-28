@@ -23,7 +23,7 @@ export default function Programs() {
             Programs
           </span>
           <h2
-            className=" font-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
           >
             Programs &amp; <span className="text-[#0B0F19]">Age Groups</span>
           </h2>
@@ -69,7 +69,7 @@ export default function Programs() {
                   style={{ backgroundColor: program.color }}
                 />
                 <h3
-                  className=" font-heading"
+                  className="text-xl font-bold text-[#0B0F19] font-heading tracking-tight mb-2"
                 >
                   {program.label}
                 </h3>

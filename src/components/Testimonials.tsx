@@ -22,7 +22,7 @@ export default function Testimonials() {
             Testimonials
           </span>
           <h2
-            className=" font-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
           >
             What Parents <span className="text-[#C8102E]">Say</span>
           </h2>

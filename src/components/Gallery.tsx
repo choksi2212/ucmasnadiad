@@ -43,7 +43,7 @@ export default function Gallery() {
             Gallery
           </span>
           <h2
-            className=" font-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
           >
             Life at <span className="text-[#C8102E]">R D Abacus</span>
           </h2>

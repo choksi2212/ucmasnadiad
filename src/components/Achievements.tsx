@@ -74,7 +74,7 @@ export default function Achievements() {
             Results & Achievements
           </span>
           <h2
-            className=" font-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
           >
             Our Students{" "}
             <span className="text-[#D4AF37]">Compete & Win</span>

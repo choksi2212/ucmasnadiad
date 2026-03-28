@@ -20,7 +20,7 @@ export default function Teachers() {
             Our Team
           </span>
           <h2
-            className=" font-heading"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
           >
             Meet Your{" "}
             <span className="text-[#0B0F19]">Instructors</span>
@@ -66,7 +66,7 @@ export default function Teachers() {
               {/* Info */}
               <div className="p-6">
                 <h3
-                  className=" font-heading"
+                  className="text-xl font-bold text-[#0B0F19] font-heading tracking-tight mb-2"
                 >
                   {teacher.name}
                 </h3>

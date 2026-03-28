@@ -23,12 +23,12 @@ const ICONS: Record<string, React.ComponentType<any>> = {
 };
 
 const CARD_COLORS = [
-  { bg: "#FFF5F5", icon: "#C8102E", border: "#FECACA" },
-  { bg: "#EFF6FF", icon: "#0B0F19", border: "#BFDBFE" },
-  { bg: "#FFFBEB", icon: "#D4AF37", border: "#FDE68A" },
-  { bg: "#F0FDF4", icon: "#22C55E", border: "#BBF7D0" },
-  { bg: "#FAF5FF", icon: "#9333EA", border: "#E9D5FF" },
-  { bg: "#EFF6FF", icon: "#0B0F19", border: "#BFDBFE" },
+  { bg: "#FFFFFF", icon: "#C8102E", border: "#E2E8F0" },
+  { bg: "#FFFFFF", icon: "#C8102E", border: "#E2E8F0" },
+  { bg: "#FFFFFF", icon: "#D4AF37", border: "#E2E8F0" },
+  { bg: "#FFFFFF", icon: "#0B0F19", border: "#E2E8F0" },
+  { bg: "#FFFFFF", icon: "#C8102E", border: "#E2E8F0" },
+  { bg: "#FFFFFF", icon: "#D4AF37", border: "#E2E8F0" },
 ];
 
 export default function Benefits() {
@@ -44,9 +44,7 @@ export default function Benefits() {
           <span className="inline-block px-4 py-1.5 bg-red-50 text-[#C8102E] text-sm font-semibold rounded-full mb-4">
             Why UCMAS?
           </span>
-          <h2
-            className=" font-heading"
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4">
             6 Skills Your Child Will{" "}
             <span className="text-[#C8102E]">Master</span>
           </h2>
@@ -72,7 +70,7 @@ export default function Benefits() {
                 key={benefit.title}
                 variants={scaleIn}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className={`relative rounded-3xl p-7 border transition-shadow duration-300 hover:shadow-xl cursor-default ${
+                className={`relative rounded-none p-7 border-b transition-all duration-300 hover:-translate-y-1 cursor-default ${
                   benefit.large ? "lg:col-span-1" : ""
                 }`}
                 style={{
@@ -91,9 +89,7 @@ export default function Benefits() {
                 </div>
 
                 {/* Content */}
-                <h3
-                  className=" font-heading"
-                >
+                <h3 className="text-xl font-bold text-[#0B0F19] font-heading tracking-tight mb-2">
                   {benefit.title}
                 </h3>
                 <p className="text-[#64748B] text-sm leading-relaxed">

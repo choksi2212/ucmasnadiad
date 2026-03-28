@@ -78,9 +78,7 @@ export default function Footer() {
             <span className="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-semibold rounded-full mb-5 border border-white/20">
               Get in Touch
             </span>
-            <h2
-              className=" font-heading"
-            >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight mb-4">
               Book a{" "}
               <span className="text-[#D4AF37]">Free Demo Class</span>
             </h2>
@@ -249,19 +247,9 @@ export default function Footer() {
             viewport={viewportOnce}
             className="space-y-7"
           >
-            {/* Logo + tagline */}
+            {/* Title + Tagline */}
             <div>
-              <div className="relative w-[130px] h-[48px] bg-white rounded-md px-2 py-1 mb-4 shadow-lg border border-white/10">
-                <Image
-                  src="/ucmas-logo.png"
-                  alt="UCMAS Logo"
-                  fill
-                  className="object-contain p-1"
-                />
-              </div>
-              <h3
-                className=" font-heading"
-              >
+              <h3 className="text-2xl font-bold text-white font-heading tracking-tight mb-2">
                 R D Abacus Nadiad
               </h3>
               <p className="text-white/60 text-sm mt-1">

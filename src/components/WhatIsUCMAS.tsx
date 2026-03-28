@@ -27,9 +27,7 @@ export default function WhatIsUCMAS() {
           <span className="inline-block px-4 py-1.5 bg-red-50 text-[#C8102E] text-sm font-semibold rounded-full mb-4">
             About the Program
           </span>
-          <h2
-            className=" font-heading"
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4">
             What is <span className="text-[#C8102E]">UCMAS</span>?
           </h2>
         </motion.div>
@@ -100,34 +98,6 @@ export default function WhatIsUCMAS() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/40 to-transparent" />
             </div>
-
-            {/* Floating card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={viewportOnce}
-              transition={{ delay: 0.4, type: "spring", stiffness: 120 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 max-w-[220px]"
-            >
-              <div className="w-12 h-12 bg-[#D4AF37]/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Brain className="text-[#C8102E]" size={24} />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-[#0B0F19]">Brain Power</div>
-                <div className="text-xs text-[#64748B]">Proven since 1993</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={viewportOnce}
-              transition={{ delay: 0.5, type: "spring", stiffness: 120 }}
-              className="absolute -top-6 -right-6 bg-[#C8102E] rounded-2xl shadow-xl p-4 text-center"
-            >
-              <div className="text-2xl font-bold text-white">80+</div>
-              <div className="text-xs text-white/80">Countries</div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
