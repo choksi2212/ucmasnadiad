@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — R D Abacus Nadiad",
+  title: "Privacy Policy",
   description: "Privacy Policy for R D Abacus Nadiad UCMAS center website.",
   robots: { index: false, follow: false },
 };
@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
           </h2>
           <p className="text-[#64748B]">Your information is used solely to:</p>
           <ul className="text-[#64748B] space-y-1 mt-2">
-            <li>Respond to your enquiry about UCMAS programs at our center.</li>
+            <li>Respond to your enquiry about our programs (UCMAS and other offerings) at our center.</li>
             <li>Schedule a free demo class if you request one.</li>
             <li>Contact you with program updates or offers (only if you consent).</li>
           </ul>
@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
           </h2>
           <p className="text-[#64748B]">
             Enquiry form submissions are retained in our email inbox and used only for follow-up communication. We do not maintain a separate database of enquiries. You may request deletion of your data at any time by contacting us at{" "}
-            <a href="mailto:rdabacuznadiad@gmail.com" className="text-[#C8102E] underline">rdabacuznadiad@gmail.com</a>.
+            <a href="mailto:rdabacusnadiad2910@gmail.com" className="text-[#C8102E] underline">rdabacusnadiad2910@gmail.com</a>.
           </p>
 
           <h2 className=" font-heading">
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
           </ul>
           <p className="text-[#64748B] mt-3">
             To exercise any of these rights, contact us at{" "}
-            <a href="mailto:rdabacuznadiad@gmail.com" className="text-[#C8102E] underline">rdabacuznadiad@gmail.com</a>{" "}
+            <a href="mailto:rdabacusnadiad2910@gmail.com" className="text-[#C8102E] underline">rdabacusnadiad2910@gmail.com</a>{" "}
             or call <a href="tel:9375030850" className="text-[#C8102E] underline">+91 93750 30850</a>.
           </p>
 
@@ -141,7 +141,7 @@ export default function PrivacyPolicy() {
               📞 <a href="tel:9375030850" className="text-[#C8102E]">+91 93750 30850</a>
             </p>
             <p>
-              ✉️ <a href="mailto:rdabacuznadiad@gmail.com" className="text-[#C8102E]">rdabacuznadiad@gmail.com</a>
+              ✉️ <a href="mailto:rdabacusnadiad2910@gmail.com" className="text-[#C8102E]">rdabacusnadiad2910@gmail.com</a>
             </p>
           </div>
         </div>

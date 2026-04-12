@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { fadeUp, staggerContainer, viewportRepeat } from "@/lib/animations";
 import { HOW_IT_WORKS } from "@/lib/constants";
 
 export default function HowItWorks() {
@@ -12,7 +12,7 @@ export default function HowItWorks() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
+          viewport={viewportRepeat}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#0B0F19] text-sm font-semibold rounded-full mb-4">
@@ -34,7 +34,7 @@ export default function HowItWorks() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={viewportOnce}
+          viewport={viewportRepeat}
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative"
         >
           {/* Connecting line (desktop only) */}

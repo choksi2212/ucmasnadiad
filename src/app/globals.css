@@ -11,19 +11,38 @@
   --color-text: #0F172A;
   --color-text-muted: #64748B;
   --color-border: #E2E8F0;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-muted-foreground: #64748b;
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
 }
 
 
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Non-static positioning so Framer Motion `useScroll` can measure offsets (see motion measure()). */
 html {
+  position: relative;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
+  position: relative;
   background-color: #FAFAFA;
   color: #1A1A2E;
   font-family: 'Inter', system-ui, sans-serif;
@@ -91,4 +110,30 @@ body {
 }
 .auto-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Life gallery — dual marquees (duplicate row content; -50% = one loop) */
+@keyframes life-marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes life-marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.marquee-life-left {
+  animation: life-marquee-left 48s linear infinite;
+}
+.marquee-life-right {
+  animation: life-marquee-right 42s linear infinite;
+}
+.marquee-life-left:hover,
+.marquee-life-right:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-life-left,
+  .marquee-life-right {
+    animation: none;
+  }
 }

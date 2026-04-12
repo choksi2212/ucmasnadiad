@@ -1,135 +1,131 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { viewportRepeat } from "@/lib/animations";
+import { cldImage } from "@/lib/media";
+import { LIFE_GALLERY_PUBLIC_IDS } from "@/lib/life-gallery.generated";
 
-const CATEGORIES = ["All", "Classroom", "Competitions", "Events", "Awards"];
+function splitForRows(ids: readonly string[]): [string[], string[]] {
+  if (ids.length === 0) return [[], []];
+  const mid = Math.ceil(ids.length / 2);
+  return [ids.slice(0, mid), ids.slice(mid)];
+}
 
-const GALLERY_ITEMS = [
-  { src: "/photos/classroom-1.jpg", alt: "UCMAS classroom session at R D Abacus Nadiad", category: "Classroom" },
-  { src: "/photos/classroom-2.jpg", alt: "Students learning mental arithmetic", category: "Classroom" },
-  { src: "/photos/classroom-3.jpg", alt: "Group learning session", category: "Classroom" },
-  { src: "/photos/kids-math-1.jpg", alt: "Children practicing mental math", category: "Classroom" },
-  { src: "/photos/teacher-student.jpg", alt: "Teacher and student one-on-one session", category: "Classroom" },
-  { src: "/photos/competition-1.jpg", alt: "UCMAS district competition", category: "Competitions" },
-  { src: "/photos/trophy-1.jpg", alt: "National competition trophies", category: "Competitions" },
-  { src: "/photos/kids-studying.jpg", alt: "Students preparing for competition", category: "Competitions" },
-  { src: "/photos/kids-award.jpg", alt: "Award ceremony for UCMAS winners", category: "Awards" },
-  { src: "/photos/abacus-1.jpg", alt: "Students with abacus at event", category: "Events" },
-];
-
-export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [lightbox, setLightbox] = useState<string | null>(null);
-
-  const filtered =
-    activeCategory === "All"
-      ? GALLERY_ITEMS
-      : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
+function MarqueeRow({
+  ids,
+  direction,
+  onPick,
+}: {
+  ids: string[];
+  direction: "left" | "right";
+  onPick: (id: string) => void;
+}) {
+  const loop = [...ids, ...ids];
+  if (ids.length === 0) return null;
 
   return (
-    <section id="gallery" className="py-20 sm:py-28 bg-[#FAFAFA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Heading */}
+    <div className="overflow-hidden py-2">
+      <div
+        className={`flex w-max gap-4 md:gap-5 ${
+          direction === "left" ? "marquee-life-left" : "marquee-life-right"
+        }`}
+      >
+        {loop.map((id, i) => (
+          <button
+            key={`${id}-${i}`}
+            type="button"
+            onClick={() => onPick(id)}
+            aria-label="View photo full size"
+            className="relative h-44 w-64 shrink-0 overflow-hidden rounded-2xl ring-1 ring-black/5 shadow-md transition-shadow hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8102E] sm:h-52 sm:w-72"
+          >
+            <Image
+              src={cldImage(id)}
+              alt=""
+              fill
+              sizes="(max-width: 640px) 256px, 288px"
+              className="object-cover"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Gallery() {
+  const [row1, row2] = useMemo(
+    () => splitForRows([...LIFE_GALLERY_PUBLIC_IDS]),
+    []
+  );
+  const [lightboxId, setLightboxId] = useState<string | null>(null);
+  const hasPhotos = row1.length > 0 || row2.length > 0;
+
+  return (
+    <section id="gallery" className="overflow-hidden bg-[#FAFAFA] py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
-          className="text-center mb-12"
+          viewport={viewportRepeat}
+          className="mb-10 text-center"
         >
-          <span className="inline-block px-4 py-1.5 bg-red-50 text-[#C8102E] text-sm font-semibold rounded-full mb-4">
+          <span className="mb-4 inline-block rounded-full border border-red-100 bg-red-50 px-4 py-1.5 text-sm font-semibold text-[#C8102E]">
             Gallery
           </span>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
-          >
+          <h2 className="mb-4 font-heading text-3xl font-bold tracking-tight text-[#0B0F19] sm:text-4xl lg:text-5xl">
             Life at <span className="text-[#C8102E]">R D Abacus</span>
           </h2>
-          <p className="mt-4 text-[#64748B] max-w-xl mx-auto text-base">
-            A glimpse into our classrooms, competitions, and celebrations.
+          <p className="mx-auto max-w-xl text-base text-[#64748B]">
+            Moments from our center — classes, events, and celebrations.
           </p>
-        </motion.div>
-
-        {/* Filter tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                activeCategory === cat
-                  ? "bg-[#C8102E] text-white shadow-lg shadow-red-500/25"
-                  : "bg-white text-[#64748B] border border-gray-200 hover:border-gray-300"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
-        >
-          <AnimatePresence mode="popLayout">
-            {filtered.map((item) => (
-              <motion.div
-                key={item.src}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.25 }}
-                className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer group"
-                onClick={() => setLightbox(item.src)}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-400"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <span className="text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    🔍
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
         </motion.div>
       </div>
 
-      {/* Lightbox */}
+      {!hasPhotos ? (
+        <p className="px-4 text-center text-sm text-[#64748B]">
+          Gallery photos coming soon. Add images to the <code className="rounded bg-black/5 px-1.5 py-0.5 text-xs">LIFE</code>{" "}
+          folder and run <code className="rounded bg-black/5 px-1.5 py-0.5 text-xs">npm run upload:media</code>.
+        </p>
+      ) : (
+        <div className="relative space-y-6">
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-[#FAFAFA] to-transparent sm:w-24" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-[#FAFAFA] to-transparent sm:w-24" />
+          <MarqueeRow ids={row1} direction="left" onPick={setLightboxId} />
+          <MarqueeRow ids={row2} direction="right" onPick={setLightboxId} />
+        </div>
+      )}
+
       <AnimatePresence>
-        {lightbox && (
+        {lightboxId && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setLightbox(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
+            onClick={() => setLightboxId(null)}
           >
             <motion.div
-              initial={{ scale: 0.9 }}
+              initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="relative w-full max-w-4xl max-h-[80vh] aspect-video"
+              exit={{ scale: 0.95 }}
+              className="relative aspect-video w-full max-w-4xl max-h-[85vh]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={lightbox}
-                alt="Gallery image"
+                src={cldImage(lightboxId)}
+                alt="Gallery"
                 fill
-                className="object-contain rounded-2xl"
+                sizes="(max-width: 896px) 100vw, 896px"
+                className="rounded-2xl object-contain"
               />
             </motion.div>
             <button
-              className="absolute top-4 right-4 text-white text-3xl font-light"
-              onClick={() => setLightbox(null)}
+              type="button"
+              className="absolute right-4 top-4 text-3xl font-light text-white"
+              onClick={() => setLightboxId(null)}
+              aria-label="Close"
             >
               ×
             </button>

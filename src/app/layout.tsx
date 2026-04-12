@@ -15,48 +15,67 @@ const fontBody = DM_Sans({
   variable: "--font-body",
 });
 
-export const metadata: Metadata = {
-  title: "R D Abacus Nadiad — UCMAS Mental Math & Abacus Classes for Kids",
-  description:
-    "Enroll your child in UCMAS at R D Abacus Nadiad — the world's leading abacus-based mental arithmetic program. Classes for ages 4-13. Book a free demo today. Call +91 93750 30850.",
-  keywords: [
-    "UCMAS Nadiad",
-    "abacus classes Nadiad",
-    "mental math classes Nadiad",
-    "R D Abacus Nadiad",
-    "kids abacus Nadiad Gujarat",
-    "mental arithmetic program",
-    "brain development children Nadiad",
-  ],
-  authors: [{ name: "R D Abacus Nadiad" }],
-  openGraph: {
-    title: "R D Abacus Nadiad — UCMAS Mental Math & Abacus Classes for Kids",
+/** Local file in `public/` — replace with your UCMAS artwork (keep path or use `ucmas-logo.png` + update here). */
+const SITE_ICON = "/ucmas-logo.svg";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const icons = {
+    icon: [{ url: SITE_ICON, type: "image/svg+xml", sizes: "any" }],
+    shortcut: SITE_ICON,
+    apple: [{ url: SITE_ICON, sizes: "180x180", type: "image/svg+xml" }],
+  };
+
+  return {
+    metadataBase: new URL("https://rdabacuznadiad.com"),
+    title: {
+      default: "R D Abacus",
+      template: "%s | R D Abacus",
+    },
     description:
-      "World's #1 mental arithmetic program. Enroll your child aged 4-13 in UCMAS at R D Abacus, Nadiad. Free demo available.",
-    url: "https://rdabacuznadiad.com",
-    siteName: "R D Abacus Nadiad",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "R D Abacus Nadiad — UCMAS Mental Math & Abacus Classes",
-    description:
-      "World's #1 mental arithmetic program. Enroll your child aged 4-13 in UCMAS at R D Abacus, Nadiad.",
-  },
-  robots: { index: true, follow: true },
-  alternates: { canonical: "https://rdabacuznadiad.com" },
-};
+      "UCMAS 2.0 (FRAM), Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting at R D Abacus, Nadiad. Abacus & mental math for ages 4–13 plus enrichment. Book a free demo. Call +91 93750 30850.",
+    keywords: [
+      "UCMAS Nadiad",
+      "Vedic Maths Nadiad",
+      "abacus classes Nadiad",
+      "mental math classes Nadiad",
+      "handwriting classes Nadiad",
+      "phonetics classes Nadiad",
+      "R D Abacus Nadiad",
+      "kids abacus Nadiad Gujarat",
+      "mental arithmetic program",
+      "brain development children Nadiad",
+    ],
+    authors: [{ name: "R D Abacus Nadiad" }],
+    openGraph: {
+      title: "R D Abacus Nadiad — UCMAS 2.0, Vedic Maths & More",
+      description:
+        "UCMAS 2.0 (FRAM), Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting in Nadiad. Free demo available.",
+      url: "https://rdabacuznadiad.com",
+      siteName: "R D Abacus Nadiad",
+      locale: "en_IN",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "R D Abacus Nadiad — UCMAS, Vedic Maths & Holistic Programs",
+      description:
+        "UCMAS 2.0 (FRAM) plus Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting in Nadiad.",
+    },
+    robots: { index: true, follow: true },
+    alternates: { canonical: "https://rdabacuznadiad.com" },
+    icons,
+  } satisfies Metadata;
+}
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["EducationalOrganization", "LocalBusiness"],
   name: "R D Abacus Nadiad",
   description:
-    "UCMAS mental arithmetic and abacus training center for children aged 4-13 in Nadiad, Gujarat.",
+    "UCMAS 2.0 (FRAM), Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting for children in Nadiad, Gujarat.",
   url: "https://rdabacuznadiad.com",
   telephone: "+919375030850",
-  email: "rdabacuznadiad@gmail.com",
+  email: "rdabacusnadiad2910@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Nadiad",
@@ -73,13 +92,13 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "15:00",
-      closes: "19:00",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "16:00",
+      closes: "19:30",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
+      dayOfWeek: "Sunday",
       opens: "09:00",
       closes: "13:00",
     },
@@ -91,6 +110,7 @@ const jsonLd = {
     "@type": "City",
     name: "Nadiad",
   },
+  foundingDate: "2004",
 };
 
 export default function RootLayout({
@@ -99,22 +119,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fontHeading.variable} ${fontBody.variable}`}>
+    <html
+      lang="en"
+      className={`${fontHeading.variable} ${fontBody.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href={SITE_ICON} type="image/svg+xml" sizes="any" />
+        <link rel="shortcut icon" href={SITE_ICON} />
+        <link rel="apple-touch-icon" href={SITE_ICON} />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Static JSON-LD only (no user/HTML input). JSON.stringify escapes script-breaking sequences. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+      <body
+        style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}
+        suppressHydrationWarning
+      >
         {children}
         {/* Umami Analytics */}
         <Script
           defer
           src="https://cloud.umami.is/script.js"
-          data-website-id="a1e6e038-9eb4-4aca-b3a1-51814902a940"
+          data-website-id="663fc7b8-2850-4237-8473-ae4c3e84da18"
           strategy="afterInteractive"
         />
       </body>

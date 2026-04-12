@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { STATS } from "@/lib/constants";
-import { fadeUp, viewportOnce } from "@/lib/animations";
+import { fadeUp, viewportRepeat } from "@/lib/animations";
 
 function AnimatedCounter({
   value,
@@ -15,12 +15,17 @@ function AnimatedCounter({
   compact?: boolean;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
   const motionVal = useMotionValue(0);
   const [display, setDisplay] = useState("0");
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) {
+      motionVal.set(0);
+      setDisplay("0");
+      return;
+    }
+    motionVal.set(0);
     const controls = animate(motionVal, value, {
       duration: 2,
       ease: [0.16, 1, 0.3, 1],
@@ -55,7 +60,7 @@ export default function StatsBar() {
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              viewport={viewportOnce}
+              viewport={viewportRepeat}
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >

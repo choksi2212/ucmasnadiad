@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — R D Abacus Nadiad",
+  title: "Terms of Use",
   description: "Terms of Use for the R D Abacus Nadiad website.",
   robots: { index: false, follow: false },
 };
@@ -91,7 +91,7 @@ export default function TermsOfUse() {
                     📞 <a href="tel:9375030850" className="text-[#C8102E]">+91 93750 30850</a>
                   </p>
                   <p>
-                    ✉️ <a href="mailto:rdabacuznadiad@gmail.com" className="text-[#C8102E]">rdabacuznadiad@gmail.com</a>
+                    ✉️ <a href="mailto:rdabacusnadiad2910@gmail.com" className="text-[#C8102E]">rdabacusnadiad2910@gmail.com</a>
                   </p>
                 </div>
               )}

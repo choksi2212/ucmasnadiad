@@ -58,4 +58,5 @@ export const scaleIn: Variants = {
   },
 };
 
-export const viewportOnce = { once: true, margin: "-80px" };
+/** Re-run enter animations each time the section scrolls into view */
+export const viewportRepeat = { once: false, margin: "-80px" };

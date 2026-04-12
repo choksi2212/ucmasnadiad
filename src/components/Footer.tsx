@@ -13,8 +13,8 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import { fadeLeft, fadeRight, fadeUp, viewportOnce } from "@/lib/animations";
-import { SITE, WEB3FORMS_KEY } from "@/lib/constants";
+import { fadeLeft, fadeRight, fadeUp, viewportRepeat } from "@/lib/animations";
+import { SITE } from "@/lib/constants";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -29,11 +29,13 @@ export default function Footer() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
-    const name = data.get("name") as string;
-    const mobile = data.get("mobile") as string;
-    const email = data.get("email") as string;
+    const name = formData.get("name") as string;
+    const mobile = formData.get("mobile") as string;
+    const email = formData.get("email") as string;
+    const message = (formData.get("message") as string) ?? "";
+    const botcheck = (formData.get("botcheck") as string) ?? "";
 
     // Validate
     const newErrors: typeof errors = {};
@@ -42,20 +44,57 @@ export default function Footer() {
     if (!email || !email.includes("@")) newErrors.email = "Enter a valid email address.";
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
 
+    if (botcheck) {
+      setFormState("success");
+      form.reset();
+      return;
+    }
+
+    const accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
+    if (!accessKey) {
+      console.error(
+        "Missing NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY — add your Web3Forms access key to .env.local"
+      );
+      setFormState("error");
+      return;
+    }
+
     setErrors({});
     setFormState("loading");
-    data.append("access_key", WEB3FORMS_KEY);
 
     try {
+      // Web3Forms free tier expects browser submissions; server-side fetch is blocked unless Pro + IP whitelist.
+      const fd = new FormData();
+      fd.append("access_key", accessKey);
+      fd.append("name", name.trim());
+      fd.append("email", email.trim());
+      fd.append("phone", mobile.trim());
+      const msg = message.trim().slice(0, 200);
+      if (msg) fd.append("message", msg);
+      fd.append("from_name", "R D Abacus Nadiad Website");
+      fd.append("subject", "New demo enquiry — website");
+
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: data,
+        body: fd,
       });
-      const json = await res.json();
-      if (json.success) {
+
+      const raw = await res.text();
+      let result: { success?: boolean; message?: string };
+      try {
+        result = JSON.parse(raw) as { success?: boolean; message?: string };
+      } catch {
+        console.error("Web3Forms returned non-JSON:", raw.slice(0, 300));
+        setFormState("error");
+        return;
+      }
+
+      if (res.ok && result.success) {
         setFormState("success");
         form.reset();
       } else {
+        console.error("Web3Forms error:", result.message ?? res.status);
         setFormState("error");
       }
     } catch {
@@ -73,7 +112,7 @@ export default function Footer() {
             variants={fadeLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={viewportOnce}
+            viewport={viewportRepeat}
           >
             <span className="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-semibold rounded-full mb-5 border border-white/20">
               Get in Touch
@@ -111,7 +150,6 @@ export default function Footer() {
             ) : (
               <form onSubmit={onSubmit} className="space-y-4" noValidate>
                 {/* Honeypot */}
-                <input type="hidden" name="from_name" value="R D Abacus Nadiad Website" />
                 <input
                   type="text"
                   name="botcheck"
@@ -244,7 +282,7 @@ export default function Footer() {
             variants={fadeRight}
             initial="hidden"
             whileInView="visible"
-            viewport={viewportOnce}
+            viewport={viewportRepeat}
             className="space-y-7"
           >
             {/* Title + Tagline */}
@@ -306,7 +344,7 @@ export default function Footer() {
             {/* Google Map embed */}
             <div className="rounded-2xl overflow-hidden border border-white/10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14711.05!2d72.8617!3d22.6916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50000000001%3A0x1!2sNadiad%2C+Gujarat+387001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src={SITE.mapEmbedUrl}
                 width="100%"
                 height="180"
                 allowFullScreen

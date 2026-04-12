@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
-import { fadeUp, viewportOnce } from "@/lib/animations";
-import { PROGRAMS } from "@/lib/constants";
+import { fadeUp, viewportRepeat } from "@/lib/animations";
+import { ENRICHMENT_PROGRAMS, PROGRAMS } from "@/lib/constants";
 
 export default function Programs() {
   const [active, setActive] = useState(0);
@@ -16,7 +16,7 @@ export default function Programs() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
+          viewport={viewportRepeat}
           className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#0B0F19] text-sm font-semibold rounded-full mb-4">
@@ -25,12 +25,18 @@ export default function Programs() {
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0F19] font-heading tracking-tight mb-4"
           >
-            Programs &amp; <span className="text-[#0B0F19]">Age Groups</span>
+            UCMAS&nbsp;2.0 <span className="text-[#C8102E]">FRAM</span> + more
           </h2>
-          <p className="mt-4 text-[#64748B] max-w-xl mx-auto text-base">
-            Structured programs designed for every stage of a child&apos;s development.
+          <p className="mt-4 text-[#64748B] max-w-2xl mx-auto text-base leading-relaxed">
+            <strong className="text-[#0B0F19] font-semibold">Foundation · Refine · Ascend · Masters</strong>
+            — the UCMAS&nbsp;2.0 pathway — plus Vedic Maths, Phonetics, Drawing, Mid Brain Training, and
+            Handwriting at the same center. Explore FRAM below, then see our other programs.
           </p>
         </motion.div>
+
+        <p className="text-center text-sm font-semibold text-[#64748B] uppercase tracking-wider mb-4">
+          UCMAS 2.0 — FRAM modules
+        </p>
 
         {/* Tab switcher */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -80,9 +86,12 @@ export default function Programs() {
                 {/* Meta info */}
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   {[
-                    { label: "Age Range", value: program.ageRange },
-                    { label: "Duration", value: program.duration },
-                    { label: "Frequency", value: program.frequency },
+                    {
+                      label: "Levels in module",
+                      value: String(program.levelsInModule),
+                    },
+                    { label: "Typical cadence", value: program.frequency },
+                    { label: "Framework", value: program.framework },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -117,7 +126,7 @@ export default function Programs() {
                 style={{ backgroundColor: program.color + "08" }}
               >
                 <h4 className="text-sm font-bold text-[#64748B] uppercase tracking-wider mb-6">
-                  What Your Child Will Learn
+                  Levels in this module
                 </h4>
                 <div className="space-y-4">
                   {program.highlights.map((h, i) => (
@@ -144,6 +153,53 @@ export default function Programs() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* Enrichment programs */}
+        <div className="mt-20 pt-16 border-t border-gray-200">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewportRepeat}
+            className="text-center mb-10"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#0B0F19] font-heading tracking-tight mb-3">
+              Also at our center
+            </h3>
+            <p className="text-[#64748B] max-w-2xl mx-auto text-sm sm:text-base">
+              Same trusted team — additional skills beyond the abacus. Ask us which batch fits your
+              child&apos;s age and goals.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {ENRICHMENT_PROGRAMS.map((p, i) => (
+              <motion.article
+                key={p.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={viewportRepeat}
+                transition={{ delay: i * 0.05 }}
+                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300 flex flex-col"
+              >
+                <div
+                  className="w-10 h-1.5 rounded-full mb-4"
+                  style={{ backgroundColor: p.color }}
+                />
+                <h4 className="text-lg font-bold text-[#0B0F19] font-heading mb-2">{p.label}</h4>
+                <p className="text-[#64748B] text-sm leading-relaxed flex-1">{p.description}</p>
+                <button
+                  type="button"
+                  onClick={() =>
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="mt-5 text-sm font-semibold text-[#C8102E] hover:text-[#9B0C23] transition-colors text-left"
+                >
+                  Enquire about {p.label} →
+                </button>
+              </motion.article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

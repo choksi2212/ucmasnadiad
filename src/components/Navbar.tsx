@@ -1,16 +1,48 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useMotionValueEvent,
+  AnimatePresence,
+} from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
+import { cldImage, MEDIA } from "@/lib/media";
+import { useHeroScrollOptional } from "@/contexts/HeroScrollContext";
+
+const HERO_NAV_REVEAL = 0.055;
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const heroCtx = useHeroScrollOptional();
+  const fallbackHeroProgress = useMotionValue(1);
+  const heroProgress = heroCtx?.scrollYProgress ?? fallbackHeroProgress;
+
+  const navReveal = useTransform(heroProgress, [0, 0.11], [0, 1]);
+  const navY = useTransform(heroProgress, [0, 0.11], [-14, 0]);
+
+  const [navInteractive, setNavInteractive] = useState(() => !heroCtx);
+
+  useLayoutEffect(() => {
+    if (!heroCtx) {
+      setNavInteractive(true);
+      return;
+    }
+    setNavInteractive(heroProgress.get() > HERO_NAV_REVEAL);
+  }, [heroCtx, heroProgress]);
+
+  useMotionValueEvent(heroProgress, "change", (v) => {
+    if (!heroCtx) return;
+    setNavInteractive(v > HERO_NAV_REVEAL);
+  });
 
   useEffect(() => {
     return scrollY.on("change", (latest) => {
@@ -18,8 +50,7 @@ export default function Navbar() {
     });
   }, [scrollY]);
 
-  const bgOpacity = useTransform(scrollY, [0, 40], [0, 1]);
-  const shadowOpacity = useTransform(scrollY, [0, 40], [0, 1]);
+   const bgOpacity = useTransform(scrollY, [0, 40], [0, 1]);
 
   // Close mobile menu on resize
   useEffect(() => {
@@ -37,13 +68,14 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50"
-        style={{}}
+        className={`fixed top-0 left-0 right-0 z-50 ${navInteractive ? "" : "pointer-events-none"}`}
+        style={{ opacity: navReveal, y: navY }}
+        aria-hidden={!navInteractive}
       >
         {/* Background layer */}
         <motion.div
-          className="absolute inset-0 bg-white border-b border-gray-100"
-          style={{ opacity: bgOpacity, boxShadow: shadowOpacity.get() > 0.1 ? "0 2px 16px rgba(0,0,0,0.08)" : "none" }}
+          className={`absolute inset-0 bg-white border-b border-gray-100 ${isScrolled ? "shadow-[0_2px_16px_rgba(0,0,0,0.08)]" : ""}`}
+          style={{ opacity: bgOpacity }}
         />
 
         <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[72px]">
@@ -51,9 +83,10 @@ export default function Navbar() {
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group">
             <div className="relative w-[110px] h-[44px]">
               <Image
-                src="/ucmas-logo.png"
+                src={cldImage(MEDIA.logo)}
                 alt="UCMAS Logo"
                 fill
+                sizes="110px"
                 className="object-contain drop-shadow-sm"
                 priority
               />

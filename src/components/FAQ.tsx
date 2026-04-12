@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { fadeUp, viewportOnce } from "@/lib/animations";
+import { fadeUp, viewportRepeat } from "@/lib/animations";
 import { FAQS } from "@/lib/constants";
 
 export default function FAQ() {
@@ -15,7 +15,7 @@ export default function FAQ() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
+          viewport={viewportRepeat}
           className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 bg-red-50 text-[#C8102E] text-sm font-semibold rounded-full mb-4">
@@ -38,7 +38,7 @@ export default function FAQ() {
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              viewport={viewportOnce}
+              viewport={viewportRepeat}
               transition={{ delay: i * 0.04 }}
               className="border border-gray-200 rounded-2xl overflow-hidden hover:border-[#C8102E]/40 transition-colors duration-200"
             >
@@ -86,7 +86,7 @@ export default function FAQ() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
+          viewport={viewportRepeat}
           className="mt-10 text-center"
         >
           <p className="text-[#64748B] text-sm mb-4">

@@ -1,29 +1,35 @@
 // ============================================================
-// SITE CONSTANTS — R D Abacus Nadiad UCMAS Center
+// SITE CONSTANTS — R D Abacus Nadiad (UCMAS 2.0)
 // ============================================================
+
+import { MEDIA } from "./media";
 
 export const SITE = {
   name: "R D Abacus Nadiad",
-  tagline: "UCMAS Mental Arithmetic Center",
+  tagline: "UCMAS 2.0, Vedic Maths & holistic programs — Nadiad",
   city: "Nadiad",
   phone: "9375030850",
   phoneDisplay: "+91 93750 30850",
   whatsapp: "919375030850",
-  whatsappMessage: "Hi! I'm interested in UCMAS classes for my child at R D Abacus Nadiad.",
-  email: "rdabacuznadiad@gmail.com",
+  whatsappMessage:
+    "Hi! I'm interested in classes at R D Abacus Nadiad (UCMAS / Vedic Maths / other programs).",
+  email: "rdabacusnadiad2910@gmail.com",
   address: "R D Abacus — UCMAS Center, Nadiad, Gujarat, India",
   mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14714.82!2d72.8617!3d22.6916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e0000000001%3A0x1!2sNadiad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2016.7746633938968!2d72.86870470447373!3d22.68709071699184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e5b1eb99c4597%3A0xd57069ef73ff12d3!2sUCMAS!5e0!3m2!1sen!2sin!4v1775918678524!5m2!1sen!2sin",
   operatingHours: [
-    { day: "Monday – Friday", time: "3:00 PM – 7:00 PM" },
-    { day: "Saturday", time: "9:00 AM – 1:00 PM" },
-    { day: "Sunday", time: "Closed" },
+    { day: "Monday", time: "Closed" },
+    { day: "Tuesday – Saturday", time: "4:00 PM – 7:30 PM" },
+    { day: "Sunday", time: "9:00 AM – 1:00 PM" },
   ],
   social: {
-    instagram: "https://instagram.com/rdabacuznadiad",
-    facebook: "https://facebook.com/rdabacuznadiad",
+    instagram:
+      "https://www.instagram.com/ucmas2.0._.nadiad?igsh=d2ltM2FkYW9nNHhj&utm_source=qr",
+    facebook: "https://www.facebook.com/share/1HyyEDLq4h/?mibextid=wwXIfr",
   },
-  founded: 2015,
+  /** Year the Nadiad center was established (founders: Kinjal & Sharad Patel). */
+  founded: 2004,
+  founders: "Kinjal Patel & Sharad Patel",
 };
 
 export const STATS = [
@@ -31,51 +37,57 @@ export const STATS = [
   { value: 6000000, suffix: "+", label: "Students Worldwide", compact: true },
   { value: 200, suffix: "+", label: "Students in Nadiad" },
   { value: new Date().getFullYear() - SITE.founded, suffix: "+", label: "Years of Excellence" },
-  { value: 45, suffix: "+", label: "Competition Winners" },
+  { value: 100, suffix: "+", label: "Competition Winners" },
 ];
 
 export const BENEFITS = [
   {
-    icon: "Brain",
+    icon: "Focus",
     title: "Concentration",
     description:
-      "Sustained focus during complex mental calculations trains deep concentration that transfers to academics and daily life.",
-    large: true,
-  },
-  {
-    icon: "Zap",
-    title: "Speed & Accuracy",
-    description:
-      "Students routinely solve 10-digit additions in seconds — faster than most adults with a calculator.",
-    large: false,
-  },
-  {
-    icon: "BookOpen",
-    title: "Memory",
-    description:
-      "Visualizing and manipulating a mental abacus with 5+ digits builds extraordinary working memory.",
-    large: false,
-  },
-  {
-    icon: "Star",
-    title: "Confidence",
-    description:
-      "Mastering a difficult skill and competing on national stages builds unshakeable self-confidence.",
-    large: false,
+      "Sustained attention during fast mental work builds focus that carries into schoolwork and everyday tasks.",
   },
   {
     icon: "Lightbulb",
     title: "Creativity",
     description:
-      "Mental arithmetic engages both brain hemispheres, fostering creative thinking alongside logical reasoning.",
-    large: false,
+      "Whole-brain training links logic and imagination so children approach problems with fresh ideas.",
   },
   {
-    icon: "TrendingUp",
-    title: "Academic Performance",
+    icon: "BookOpen",
+    title: "Memory Power",
     description:
-      "UCMAS students consistently outperform peers in math and science due to enhanced cognitive abilities.",
-    large: true,
+      "Visualizing the abacus strengthens working memory — holding and manipulating longer number chains with ease.",
+  },
+  {
+    icon: "Wand2",
+    title: "Imagination",
+    description:
+      "Mental arithmetic depends on vivid inner imagery, nurturing a strong, flexible mind’s eye.",
+  },
+  {
+    icon: "Eye",
+    title: "Observation",
+    description:
+      "Quick, accurate perception of patterns and detail supports faster recall and fewer careless mistakes.",
+  },
+  {
+    icon: "LayoutGrid",
+    title: "Application",
+    description:
+      "Skills transfer beyond drills — children learn to apply structured thinking to new situations.",
+  },
+  {
+    icon: "BrainCircuit",
+    title: "Reasoning",
+    description:
+      "Step-by-step mental calculation strengthens logical reasoning and sound decision-making.",
+  },
+  {
+    icon: "BadgeCheck",
+    title: "Self Confidence",
+    description:
+      "Visible progress and achievements help children trust their ability to tackle hard challenges.",
   },
 ];
 
@@ -106,59 +118,92 @@ export const HOW_IT_WORKS = [
   },
 ];
 
+/** UCMAS 2.0 module pathway — FRAM (Foundation · Refine · Ascend · Masters). Replaces legacy FCAM (Foundation · Construction · Advanced · Masters). */
 export const PROGRAMS = [
   {
-    id: "tiny-tots",
-    label: "Tiny Tots",
-    ageRange: "Ages 4–6",
-    duration: "1–2 Years",
+    id: "foundation",
+    label: "Foundation",
+    levelsInModule: 2,
     frequency: "2 hrs / week",
-    color: "#FFB800",
-    highlights: [
-      "Introduction to abacus & numbers",
-      "Number recognition and basic counting",
-      "Fun, play-based learning approach",
-      "Basic addition and subtraction",
-      "Building attention span and focus",
-    ],
+    framework: "FRAM · UCMAS 2.0",
+    color: "#1F6F54",
+    highlights: ["Foundation / Basic", "Elementary A"],
     description:
-      "Our foundation program designed for young learners. Through play and interactive exercises, children develop a strong number sense and are introduced to the abacus in an engaging, stress-free environment.",
+      "The first stage of UCMAS 2.0: children build core abacus skills and number sense. Under the updated FRAM structure, Foundation combines the entry levels that begin every learner’s journey — replacing the old FCAM grouping where Elementary B sat in a different block.",
   },
   {
-    id: "regular",
-    label: "Regular Program",
-    ageRange: "Ages 6–13",
-    duration: "2–3 Years",
+    id: "refine",
+    label: "Refine",
+    levelsInModule: 2,
     frequency: "2 hrs / week",
-    color: "#E31837",
-    highlights: [
-      "Full UCMAS curriculum (8 levels)",
-      "Mental arithmetic development",
-      "Speed and accuracy training",
-      "Competition preparation",
-      "Cognitive skill enhancement",
-    ],
+    framework: "FRAM · UCMAS 2.0",
+    color: "#C8102E",
+    highlights: ["Elementary B", "Intermediate A"],
     description:
-      "The core UCMAS curriculum with progressive levels from basic to advanced. Students systematically develop mental arithmetic ability and compete in district, state, and national competitions.",
+      "Refine strengthens technique and speed as students bridge early and middle curriculum steps. This module maps to content that previously sat across FCAM Foundation and Construction — now organized for a clearer progression.",
   },
   {
-    id: "competition",
-    label: "Competition Track",
-    ageRange: "Selected Students",
-    duration: "Ongoing",
-    frequency: "3+ hrs / week",
+    id: "ascend",
+    label: "Ascend",
+    levelsInModule: 3,
+    frequency: "2 hrs / week",
+    framework: "FRAM · UCMAS 2.0",
     color: "#1B3A6B",
-    highlights: [
-      "Intensive advanced training",
-      "National competition preparation",
-      "International competition pathway",
-      "Speed drills and timed exercises",
-      "Personalized coaching",
-    ],
+    highlights: ["Intermediate B", "Higher A", "Higher B"],
     description:
-      "For students who demonstrate exceptional ability. Intensive training for district, state, national, and international UCMAS competitions. Our center has produced multiple national-level winners.",
+      "Ascend pushes mental arithmetic into advanced operations and longer chains. It brings together levels that were spread across FCAM Construction and Advanced under the new FRAM ladder.",
+  },
+  {
+    id: "masters",
+    label: "Masters",
+    levelsInModule: 3,
+    frequency: "2 hrs / week",
+    framework: "FRAM · UCMAS 2.0",
+    color: "#B8860B",
+    highlights: ["Advance", "Grand Level A", "Grand Level B"],
+    description:
+      "The Masters stage completes the FRAM pathway with the highest curriculum levels — including Advance and Grand levels — preparing dedicated students for competitions and peak mental-math performance.",
   },
 ];
+
+/** Additional offerings alongside UCMAS — same center, separate tracks / batches. */
+export const ENRICHMENT_PROGRAMS = [
+  {
+    id: "vedic-maths",
+    label: "Vedic Maths",
+    description:
+      "Speed and clarity with Vedic sutras — complementary to school math and ideal for children who enjoy patterns and shortcuts.",
+    color: "#1B3A6B",
+  },
+  {
+    id: "phonetics",
+    label: "Phonetics",
+    description:
+      "Sound–letter awareness, blending, and spelling foundations so reading and pronunciation feel natural, not forced.",
+    color: "#1F6F54",
+  },
+  {
+    id: "drawing",
+    label: "Drawing",
+    description:
+      "Observation, line, and composition — building fine motor control and creative confidence in a structured, age-appropriate way.",
+    color: "#C8102E",
+  },
+  {
+    id: "mid-brain",
+    label: "Mid Brain Training",
+    description:
+      "Sensory and focus-based activities aimed at whole-brain coordination, memory, and concentration habits.",
+    color: "#7C3AED",
+  },
+  {
+    id: "handwriting",
+    label: "Handwriting",
+    description:
+      "Posture, grip, and letter formation for neat, readable script — skills that carry into every subject at school.",
+    color: "#B8860B",
+  },
+] as const;
 
 export const TESTIMONIALS = [
   {
@@ -213,16 +258,16 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   {
-    q: "What is UCMAS and how does it work?",
-    a: "UCMAS (Universal Concept of Mental Arithmetic System) is a brain development program using abacus-based mental arithmetic. Children first learn to calculate using a physical abacus, then gradually develop the ability to visualize the abacus in their mind and perform complex calculations mentally — without any tool.",
+    q: "What is UCMAS 2.0 and how does FRAM work?",
+    a: "UCMAS (Universal Concept of Mental Arithmetic System) is now offered as UCMAS 2.0 with an updated module map called FRAM: Foundation, Refine, Ascend, and Masters. It replaces the older FCAM structure (Foundation, Construction, Advanced, Masters) so levels flow in four clear stages — same proven abacus method, clearer progression. Children learn on the physical abacus first, then visualize it mentally for fast, tool-free calculation.",
   },
   {
     q: "What age group is UCMAS suitable for?",
-    a: "UCMAS is most effective for children aged 4 to 13 years. This is the prime window for brain development and learning. We have a specially designed Tiny Tots program for children aged 4–6, and the regular program for ages 6–13.",
+    a: "UCMAS is most effective for children aged 4 to 13 years — the prime window for brain development. Younger learners usually begin in the Foundation stage of FRAM; progression continues through Refine, Ascend, and Masters as skills grow.",
   },
   {
     q: "How long is the program?",
-    a: "The program consists of 8 levels. Completing all levels typically takes 2–3 years depending on the child's pace and dedication. Children can advance faster if they practice regularly at home.",
+    a: "The full journey follows the FRAM pathway through Foundation, Refine, Ascend, and Masters. Completing the curriculum typically takes about 2–3 years depending on pace and practice. Regular short practice at home speeds progress.",
   },
   {
     q: "How often are the classes?",
@@ -250,7 +295,11 @@ export const FAQS = [
   },
   {
     q: "Where is the center located and what are the timings?",
-    a: "We are located in Nadiad, Gujarat. Our classes run Monday to Friday from 3:00 PM to 7:00 PM and Saturday from 9:00 AM to 1:00 PM. Call us at +91 93750 30850 or WhatsApp us to schedule a free demo class.",
+    a: "We are located in Nadiad, Gujarat. Class timings are Tuesday to Saturday, 4:00 PM – 7:30 PM, and Sunday, 9:00 AM – 1:00 PM. We are closed on Mondays. Call +91 93750 30850 or WhatsApp us to schedule a free demo or ask about batch availability.",
+  },
+  {
+    q: "Besides UCMAS, what other programs do you offer?",
+    a: "At R D Abacus Nadiad we also run Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting. Timings and batches can vary by program — contact us for the latest schedule and age groups.",
   },
 ];
 
@@ -259,30 +308,51 @@ export const TEACHERS = [
     name: "Sharad Patel",
     role: "Center Director & Head Instructor",
     experience: "10+ Years",
-    photo: "/photos/teacher-1.jpg",
-    bio: "Sharad Patel is a certified UCMAS instructor with over a decade of experience training children in mental arithmetic. His passion for child development and mathematics has helped hundreds of students unlock their potential.",
+    photo: MEDIA.staff.sharad,
+    bio: "Sharad Patel is a certified UCMAS instructor with decades of experience training children in mental arithmetic. His passion for child development and mathematics has helped hundreds of students unlock their potential.",
   },
   {
-    name: "Priya Desai",
+    name: "Pinal Patel",
     role: "Senior Instructor",
     experience: "6+ Years",
-    photo: "/photos/teacher-2.jpg",
-    bio: "Priya specializes in working with younger students in the Tiny Tots program. Her patient, nurturing approach makes mathematics fun and accessible for even the youngest learners.",
+    photo: MEDIA.staff.pinal,
+    bio: "Pinal focuses on Foundation and early FRAM levels of UCMAS 2.0, helping young learners build confidence on the abacus. Her calm, encouraging style makes every child feel supported in class.",
   },
   {
-    name: "Ravi Mehta",
-    role: "Competition Coach",
+    name: "Falguni Patel",
+    role: "Instructor & Competition Coach",
     experience: "5+ Years",
-    photo: "/photos/teacher-3.jpg",
-    bio: "Ravi leads the advanced competition track, having personally coached students to national-level UCMAS competitions. His structured training methodology produces consistent results.",
+    photo: MEDIA.photos.teacher3,
+    bio: "Falguni supports students through advanced levels and competition preparation, with clear structure and attention to accuracy. She celebrates progress and keeps learners motivated toward their goals.",
   },
 ];
 
+/** `galleryKey` maps each stat card to Cloudinary folder `rd-abacus-nadiad/results/<key>/`. */
 export const ACHIEVEMENTS = [
-  { value: 45, suffix: "+", label: "National Competition Winners" },
-  { value: 12, suffix: "+", label: "State Champions" },
-  { value: 3, suffix: "", label: "International Participants" },
-  { value: 200, suffix: "+", label: "Students Trained" },
+  {
+    value: 50,
+    suffix: "+",
+    label: "State Level Winners",
+    galleryKey: "state" as const,
+  },
+  {
+    value: 30,
+    suffix: "+",
+    label: "National Level Winners",
+    galleryKey: "national" as const,
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "International Level Winners",
+    galleryKey: "international" as const,
+  },
+  {
+    value: 25,
+    suffix: "+",
+    label: "Other International Competitions",
+    galleryKey: "others" as const,
+  },
 ];
 
 export const NAV_LINKS = [
@@ -294,4 +364,3 @@ export const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const WEB3FORMS_KEY = "e9c05c2b-930d-447a-ad28-c6eb44239505";

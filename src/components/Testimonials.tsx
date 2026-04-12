@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
-import { fadeUp, viewportOnce } from "@/lib/animations";
+import { fadeUp, viewportRepeat } from "@/lib/animations";
 import { TESTIMONIALS } from "@/lib/constants";
 
 export default function Testimonials() {
@@ -15,7 +15,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
+          viewport={viewportRepeat}
           className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 bg-yellow-50 text-[#D4AF37] text-sm font-semibold rounded-full mb-4 border border-yellow-200">
