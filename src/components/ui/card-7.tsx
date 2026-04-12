@@ -72,13 +72,13 @@ export function InteractiveInstructorCard({
           style={{ transform: "translateZ(-20px) scale(1.1)" }}
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent rounded-3xl pointer-events-none" />
 
       <div
-        className="absolute inset-0 p-5 flex flex-col z-[1]"
+        className="absolute inset-0 z-[1] flex flex-col justify-end p-5"
         style={{ transform: "translateZ(40px)" }}
       >
-        <div className="flex items-start justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+        <div className="flex items-end justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
           <div className="flex min-w-0 flex-col">
             <h3 className="text-xl font-bold text-white font-heading leading-tight">
               {name}
@@ -96,13 +96,13 @@ export function InteractiveInstructorCard({
           </div>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-3">
           <div className="inline-flex rounded-full bg-black/45 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm border border-white/10">
             {experience}
           </div>
         </div>
 
-        <div className="mt-auto pt-4 border-t border-white/10">
+        <div className="mt-3 border-t border-white/10 pt-3">
           <p className="text-center text-[10px] uppercase tracking-[0.2em] text-white/50">
             UCMAS certified
           </p>
