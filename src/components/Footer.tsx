@@ -12,6 +12,7 @@ import {
   Send,
   CheckCircle,
   AlertCircle,
+  Linkedin,
 } from "lucide-react";
 import { fadeLeft, fadeRight, fadeUp, viewportRepeat } from "@/lib/animations";
 import { SITE } from "@/lib/constants";
@@ -401,25 +402,52 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 py-5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">
-          <span>
-            © {new Date().getFullYear()} R D Abacus Nadiad. All rights reserved.
-          </span>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white/70 transition-colors">
-              Terms of Use
-            </Link>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-4">
+          <p className="text-center sm:text-left text-xs sm:text-sm text-white/45 leading-relaxed">
+            Developed and maintained by{" "}
+            <span className="font-medium text-white/70">Manas Choksi</span>
+            <span className="mx-1.5 text-white/25 sm:mx-2" aria-hidden>
+              ·
+            </span>
             <a
-              href="https://www.ucmas.com"
+              href="tel:+919586673394"
+              className="text-white/55 hover:text-white/85 transition-colors underline-offset-2 hover:underline whitespace-nowrap"
+            >
+              +91 95866 73394
+            </a>
+            <span className="mx-1.5 text-white/25 sm:mx-2" aria-hidden>
+              ·
+            </span>
+            <a
+              href="https://www.linkedin.com/in/manas-choksi"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white/70 transition-colors"
+              className="inline-flex items-center gap-1 text-white/55 hover:text-white/85 transition-colors underline-offset-2 hover:underline"
             >
-              Powered by UCMAS
+              <Linkedin className="w-3.5 h-3.5 shrink-0 opacity-80" aria-hidden />
+              LinkedIn
             </a>
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/40">
+            <span>
+              © {new Date().getFullYear()} R D Abacus Nadiad. All rights reserved.
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-white/70 transition-colors">
+                Terms of Use
+              </Link>
+              <a
+                href="https://www.ucmas.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/70 transition-colors"
+              >
+                Powered by UCMAS
+              </a>
+            </div>
           </div>
         </div>
       </div>
