@@ -260,6 +260,20 @@ async function main() {
     );
   }
 
+  const falguniCandidates = [
+    path.join(root, "public", "falguni.png"),
+    path.join(root, "public", "falguni.jpg"),
+    path.join(root, "public", "falguni.jpeg"),
+    path.join(root, "falguni.png"),
+    path.join(root, "falguni.jpg"),
+  ];
+  for (const fp of falguniCandidates) {
+    if (fs.existsSync(fp) && fs.statSync(fp).isFile()) {
+      await uploadImage(fp, `${PREFIX}/staff`, "falguni");
+      break;
+    }
+  }
+
   // Life gallery — LIFE/ or public/LIFE/ → rd-abacus-nadiad/life/<name> + writes src/lib/life-gallery.generated.ts
   function resolveLifeDir() {
     const candidates = [

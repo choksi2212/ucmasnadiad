@@ -15,6 +15,7 @@ export const MEDIA = {
   staff: {
     sharad: `${PREFIX}/staff/sharad`,
     pinal: `${PREFIX}/staff/pinal`,
+    falguni: `${PREFIX}/staff/falguni`,
   },
   photos: {
     classroom1: `${PREFIX}/photos/classroom-1`,

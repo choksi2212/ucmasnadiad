@@ -307,7 +307,7 @@ export const TEACHERS = [
   {
     name: "Sharad Patel",
     role: "Center Director & Head Instructor",
-    experience: "10+ Years",
+    experience: "20+ Years",
     photo: MEDIA.staff.sharad,
     bio: "Sharad Patel is a certified UCMAS instructor with decades of experience training children in mental arithmetic. His passion for child development and mathematics has helped hundreds of students unlock their potential.",
   },
@@ -322,7 +322,7 @@ export const TEACHERS = [
     name: "Falguni Patel",
     role: "Instructor & Competition Coach",
     experience: "5+ Years",
-    photo: MEDIA.photos.teacher3,
+    photo: MEDIA.staff.falguni,
     bio: "Falguni supports students through advanced levels and competition preparation, with clear structure and attention to accuracy. She celebrates progress and keeps learners motivated toward their goals.",
   },
 ];
