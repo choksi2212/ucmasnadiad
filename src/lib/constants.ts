@@ -314,14 +314,14 @@ export const TEACHERS = [
   {
     name: "Pinal Patel",
     role: "Senior Instructor",
-    experience: "6+ Years",
+    experience: "10+ Years",
     photo: MEDIA.staff.pinal,
     bio: "Pinal focuses on Foundation and early FRAM levels of UCMAS 2.0, helping young learners build confidence on the abacus. Her calm, encouraging style makes every child feel supported in class.",
   },
   {
     name: "Falguni Patel",
     role: "Instructor & Competition Coach",
-    experience: "5+ Years",
+    experience: "10+ Years",
     photo: MEDIA.staff.falguni,
     bio: "Falguni supports students through advanced levels and competition preparation, with clear structure and attention to accuracy. She celebrates progress and keeps learners motivated toward their goals.",
   },
