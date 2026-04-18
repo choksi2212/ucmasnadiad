@@ -26,7 +26,7 @@ export default function TermsOfUse() {
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-12">
           
           <p className="text-[#64748B] text-sm leading-relaxed">
-            By accessing and using the website located at <strong>rdabacuznadiad.com</strong> (the &ldquo;Website&rdquo;), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this Website.
+            By accessing and using the website located at <strong>ucmasnadiad.in</strong> (the &ldquo;Website&rdquo;), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this Website.
           </p>
 
           {[

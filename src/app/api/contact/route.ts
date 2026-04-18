@@ -43,8 +43,8 @@ function isAllowedOrigin(origin: string | null): boolean {
   const allowed = new Set(
     [
       site,
-      "https://rdabacuznadiad.com",
-      "https://www.rdabacuznadiad.com",
+      "https://ucmasnadiad.in",
+      "https://www.ucmasnadiad.in",
     ].filter(Boolean)
   );
   return allowed.has(origin);

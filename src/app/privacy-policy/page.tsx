@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
           
           <p className="text-[#64748B]">
             This Privacy Policy describes how <strong>R D Abacus Nadiad</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects information you provide when you use our website at{" "}
-            <strong>rdabacuznadiad.com</strong> (the &ldquo;Website&rdquo;).
+            <strong>ucmasnadiad.in</strong> (the &ldquo;Website&rdquo;).
           </p>
 
           <h2 className=" font-heading">
