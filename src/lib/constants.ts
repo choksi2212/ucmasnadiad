@@ -6,7 +6,7 @@ import { MEDIA } from "./media";
 
 export const SITE = {
   name: "R D Abacus Nadiad",
-  /** Canonical HTTPS origin (no trailing slash). Used for metadata and JSON-LD. Keep `public/sitemap.xml` + `public/robots.txt` in sync when this changes. */
+  /** Canonical HTTPS origin (no trailing slash). Homepage URL in metadata/sitemap is `${origin}/`. Keep `public/sitemap.xml` + `public/robots.txt` in sync when this changes. */
   origin: "https://ucmasnadiad.in",
   tagline: "UCMAS 2.0, Vedic Maths & holistic programs — Nadiad",
   city: "Nadiad",

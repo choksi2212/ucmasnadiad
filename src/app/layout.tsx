@@ -63,7 +63,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "UCMAS Nadiad | R D Abacus — UCMAS 2.0, Vedic Maths & More",
       description:
         "UCMAS Nadiad: UCMAS 2.0 (FRAM), Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting. Free demo in Nadiad.",
-      url: SITE.origin,
+      url: `${SITE.origin}/`,
       siteName: "UCMAS Nadiad — R D Abacus",
       locale: "en_IN",
       type: "website",
@@ -77,7 +77,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [ogImage],
     },
     robots: { index: true, follow: true },
-    alternates: { canonical: SITE.origin },
+    alternates: { canonical: `${SITE.origin}/` },
     icons,
     ...(googleVerify ? { verification: { google: googleVerify } } : {}),
   } satisfies Metadata;
@@ -98,7 +98,7 @@ const jsonLd = {
       ],
       description:
         "UCMAS Nadiad — UCMAS 2.0 (FRAM), Vedic Maths, Phonetics, Drawing, Mid Brain Training, and Handwriting for children in Nadiad, Gujarat.",
-      url: SITE.origin,
+      url: `${SITE.origin}/`,
       image: defaultOgImageUrl(),
       telephone: `+91${SITE.phone}`,
       email: SITE.email,
@@ -149,7 +149,7 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE.origin}/#website`,
-      url: SITE.origin,
+      url: `${SITE.origin}/`,
       name: "UCMAS Nadiad — R D Abacus",
       description: SITE.tagline,
       inLanguage: "en-IN",
