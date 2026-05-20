@@ -327,6 +327,13 @@ export const TEACHERS = [
     photo: MEDIA.staff.falguni,
     bio: "Falguni supports students through advanced levels and competition preparation, with clear structure and attention to accuracy. She celebrates progress and keeps learners motivated toward their goals.",
   },
+  {
+    name: "Janak Raval",
+    role: "Instructor",
+    experience: "2 Years",
+    photo: MEDIA.staff.janak,
+    bio: "Janak supports students through early levels with clear explanations and friendly encouragement, helping children build strong abacus fundamentals and confidence in class.",
+  },
 ];
 
 /** `galleryKey` maps each stat card to Cloudinary folder `rd-abacus-nadiad/results/<key>/`. */
